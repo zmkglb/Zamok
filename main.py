@@ -15,7 +15,7 @@ def checkAnswer(summa):
         global flag
         if flag == 3:
             sys.exit()
-        func("test.txt")
+        func("27-22b.txt")
 
 
 def func(file):
