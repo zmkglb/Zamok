@@ -1,7 +1,7 @@
-# coding=utf-8
 import sys
 
 flag = 1
+
 
 def checkAnswer(summa):
     """
@@ -65,18 +65,19 @@ def func(file):
 
     """ Первый проход по отсортированным массивам, выбираем минимальные """
     for i in range(size):
-        if checkArray[j] == 1:
-            sum -= firstArray[j]
-            sum += secondArray[j]
+        if checkArray[i] == 1:
+            sum -= firstArray[i]
+            sum += secondArray[i]
             checkAnswer(sum)
-            sum += firstArray[j]
-            sum -= secondArray[j]
+            sum += firstArray[i]
+            sum -= secondArray[i]
         else:
-            sum -= secondArray[j]
-            sum += firstArray[j]
+            sum -= secondArray[i]
+            sum += firstArray[i]
             checkAnswer(sum)
-            sum += secondArray[j]
-            sum -= firstArray[j]
+            sum += secondArray[i]
+            sum -= firstArray[i]
+
 
     """ все остальные проходы (перебор вохможных всех возможных комибинаций с движением от минимума к максимому)"""
     for i in range(size):
@@ -101,6 +102,7 @@ def func(file):
         else:
             sum -= secondArray[i]
             sum += firstArray[i]
+    checkAnswer(sum)
 
 
 func("27-22a.txt")
